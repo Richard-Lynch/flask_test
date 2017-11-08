@@ -1,0 +1,26 @@
+#!/usr/local/bin/python3
+
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+pals = [
+        {'name' : 'ste'},
+        {'name' : 'richie'},
+        {'name' : 'alex' }
+        ]
+@app.route('/', methods=['GET'])
+def test():
+    return jsonify({'message' : 'test passed'})
+
+@app.route('/pals', methods=['GET'])
+def all():
+    return jsonify({'friends' : pals})
+
+@app.route('/pals/<string:name>', methods=['GET'])
+def pal(name):
+    return jsonify({'friends' : [Pal for Pal in pals if Pal['name'] == name][0]})
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
