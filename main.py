@@ -39,6 +39,7 @@ def update():
         if output != None:
             out = output.decode()
             print ("OUT", out)
+            print ("hey ste")
             response['OUT'] = out
             if error != None:
                 err = error.decode()
