@@ -9,7 +9,7 @@ json_template='{
     pros: $v2,
     cons: $v3
 }'
-address="http://79.97.209.77:8080"
+address="http://79.97.206.77:8080"
 jq -n --arg v1 "$V1" \
     --arg v2 "$V2" \
     --arg v3 "$V3" "$json_template" |
